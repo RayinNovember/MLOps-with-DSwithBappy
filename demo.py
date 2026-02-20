@@ -1,1 +1,3 @@
-from us_visa.logger import logging
+import os
+mongo_db_url = os.getenv('mongodb_url')
+print(mongo_db_url)
