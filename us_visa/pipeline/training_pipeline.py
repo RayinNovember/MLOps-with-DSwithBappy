@@ -13,6 +13,7 @@ from us_visa.entity.artifact_entity import DataValidationArtifact
 class TrainPipeline:
     def __init__(self):
         self.data_ingestion_config = DataIngestionConfig()
+        self.data_validation_config = DataValidationConfig()
         
     def start_data_ingestion(self) -> DataIngestionArtifact:
         """
