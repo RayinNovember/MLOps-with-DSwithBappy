@@ -1,0 +1,53 @@
+[ 2026-02-23 10:16:04,081 ] asyncio - DEBUG - Using proactor: IocpProactor
+[ 2026-02-23 10:16:08,432 ] root - INFO - Entered the start_data_ingestion method of TraingPipeline class
+[ 2026-02-23 10:16:08,432 ] root - INFO - Getting the data from mongodb
+[ 2026-02-23 10:16:08,432 ] root - INFO - Entered initiate_data_ingestion method of Data_Ingestion class
+[ 2026-02-23 10:16:08,432 ] root - INFO - Exporting data from mongodb
+[ 2026-02-23 10:16:09,088 ] root - INFO - MongoDB connection succesfull
+[ 2026-02-23 10:16:10,560 ] root - INFO - Shape of dataframe: (25480, 12)
+[ 2026-02-23 10:16:10,562 ] root - INFO - saving exported data into feature store path: artifact\02_23_2026_10_15_58\data_ingestion\feature_store\usvisa.csv
+[ 2026-02-23 10:16:10,622 ] root - INFO - Got the data from mongodb
+[ 2026-02-23 10:16:10,622 ] root - INFO - Entered split_data_as_train_test method of Data_Ingestion class
+[ 2026-02-23 10:16:10,628 ] root - INFO - Performed train test split on the dataframe
+[ 2026-02-23 10:16:10,628 ] root - INFO - Exited split_data_as_train_test method of Data_Ingestion class
+[ 2026-02-23 10:16:10,628 ] root - INFO - Exporting train and test file path.
+[ 2026-02-23 10:16:10,680 ] root - INFO - Exported train and test file path.
+[ 2026-02-23 10:16:10,680 ] root - INFO - Performed train test split on the dataset
+[ 2026-02-23 10:16:10,680 ] root - INFO - Exited initiate_data_ingestion method of Data_Ingestion class
+[ 2026-02-23 10:16:10,680 ] root - INFO - Data ingestion artifact: DataIngestionArtifact(trained_file_path='artifact\\02_23_2026_10_15_58\\data_ingestion\\ingested\\train.csv', test_file_path='artifact\\02_23_2026_10_15_58\\data_ingestion\\ingested\\test.csv')
+[ 2026-02-23 10:16:10,680 ] root - INFO - Got the training_set and test_set from mongodb
+[ 2026-02-23 10:16:10,680 ] root - INFO - Exited the start_data_ingestion method of TrainPipeline class
+[ 2026-02-23 10:16:10,680 ] root - INFO - Entered the start_data_validation method of TrainPipeline class
+[ 2026-02-23 10:16:10,682 ] root - INFO - Starting data validation
+[ 2026-02-23 10:16:10,800 ] root - INFO - Is required column present: [True]
+[ 2026-02-23 10:16:10,800 ] root - INFO - All required columns present in training dataframe: True
+[ 2026-02-23 10:16:10,800 ] root - INFO - Is required column present: [True]
+[ 2026-02-23 10:16:10,800 ] root - INFO - All required columns present in testing dataframe: True
+[ 2026-02-23 10:16:10,811 ] root - DEBUG - Executing <class 'evidently.legacy.calculation_engine.python_engine.PythonEngine.get_metric_implementation.<locals>._Wrapper'>...
+[ 2026-02-23 10:24:50,717 ] root - DEBUG - Executing <class 'evidently.legacy.calculation_engine.python_engine.PythonEngine.get_metric_implementation.<locals>._Wrapper'>...
+[ 2026-02-23 10:28:31,315 ] root - INFO - 1/12 drift detected.
+[ 2026-02-23 10:28:31,316 ] root - INFO - Data validation artifact: DataValidationArtifact(validation_status=True, message='Drift not detected', drift_report_file_path='artifact\\02_23_2026_10_15_58\\data_validation\\drift_report\\report.yaml')
+[ 2026-02-23 10:28:31,316 ] root - INFO - Performed the data validation operation
+[ 2026-02-23 10:28:31,316 ] root - INFO - Exited the start_data_validation method of TrainPipeline class
+[ 2026-02-23 10:28:31,319 ] root - INFO - Starting data transformation
+[ 2026-02-23 10:28:31,319 ] root - INFO - Entered get_data_transformer_object method of DataTransformation class
+[ 2026-02-23 10:28:31,319 ] root - INFO - Got numerical cols from schema config
+[ 2026-02-23 10:28:31,319 ] root - INFO - Initialized StandardScaler, OneHotEncoder, OrdinalEncoder
+[ 2026-02-23 10:28:31,319 ] root - INFO - Initialize PowerTransformer
+[ 2026-02-23 10:28:31,319 ] root - INFO - Created preprocessor object from ColumnTransformer
+[ 2026-02-23 10:28:31,319 ] root - INFO - Exited get_data_transformer_object method of DataTransformation class
+[ 2026-02-23 10:28:31,319 ] root - INFO - Got the preprocessor object
+[ 2026-02-23 10:28:31,367 ] root - INFO - Got train features and test features of Training dataset
+[ 2026-02-23 10:28:31,368 ] root - INFO - Added company_age column to the Training dataset
+[ 2026-02-23 10:28:31,368 ] root - INFO - drop the columns in drop_cols of Training dataset
+[ 2026-02-23 10:28:31,368 ] root - INFO - Entered drop_columns methon of utils
+[ 2026-02-23 10:28:31,368 ] root - INFO - Exited the drop_columns method of utils
+[ 2026-02-23 10:28:31,371 ] root - INFO - Added company_age column to the Test dataset
+[ 2026-02-23 10:28:31,371 ] root - INFO - Entered drop_columns methon of utils
+[ 2026-02-23 10:28:31,372 ] root - INFO - Exited the drop_columns method of utils
+[ 2026-02-23 10:28:31,372 ] root - INFO - drop the columns in drop_cols of Test dataset
+[ 2026-02-23 10:28:31,372 ] root - INFO - Got train features and test features of Testing dataset
+[ 2026-02-23 10:28:31,372 ] root - INFO - Applying preprocessing object on training dataframe and testing dataframe
+[ 2026-02-23 10:28:31,433 ] root - INFO - Used the preprocessor object to fit transform the train features
+[ 2026-02-23 10:28:31,444 ] root - INFO - Used the preprocessor object to transform the test features
+[ 2026-02-23 10:28:31,444 ] root - INFO - Applying SMOTEENN on Training dataset
