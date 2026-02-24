@@ -1,0 +1,2 @@
+[ 2026-02-23 18:10:46,181 ] asyncio - DEBUG - Using proactor: IocpProactor
+[ 2026-02-23 18:10:51,782 ] asyncio - DEBUG - Using proactor: IocpProactor
